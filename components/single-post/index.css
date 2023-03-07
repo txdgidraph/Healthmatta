@@ -1,0 +1,50 @@
+.singlePostWrapper {
+  padding: 20px 0px 20px 20px;
+}
+.singlePostFeaturedImg {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.singlePostTitle{
+    margin: 10px;
+    font-family: 'Lora',serif;
+    text-align: center;
+    font-size: 28px;
+}
+.Title-Edit-options-wrapper{
+    width: 100%;
+}
+.singlePostEditOptions{
+    float: right;
+}
+.singlePostEditIcon{
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.singlePostEditIcon:first-child{
+    color: teal;
+}
+.singlePostEditIcon:last-child{
+    color: tomato;
+}
+.singlePostInfo{
+    font-family: 'Varela Round', sans-serif;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    color: #b39656;
+}
+.singlePostDesc{
+    color: #666;
+    font-size: 18px;
+    line-height: 25px;
+}
+.singlePostDesc::first-letter{
+    margin-left: 20px;
+    font-size: 30px;
+    font-weight: 600;
+}

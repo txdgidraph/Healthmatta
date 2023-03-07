@@ -1,0 +1,11 @@
+.gadgets-device-section-headline-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.gadgets-device-section-headline-title{
+    font-family: "Josefin Sans", sans-serif;
+    margin-top: 5px;
+    font-weight: 900;
+    font-size: 1.1em;
+}

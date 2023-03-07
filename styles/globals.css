@@ -1,0 +1,101 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Lora:ital,wght@1,400;1,500;1,600;1,700&family=Roboto:wght@300&family=Varela&family=Varela+Round&display=swap");
+
+* {
+  margin: 0px;
+}
+
+/* HomepageCSS
+HomepageCSS
+HomepageCSS */
+.wordpress-cont {
+  margin-top: 3em;
+}
+.uri-header {
+  margin-top: 4em;
+  width: 100%;
+}
+.uri-featuredImageCont {
+  width: 100%;
+  padding: 3em;
+  padding-top: 2em;
+}
+.uri-featuredImage {
+  object-fit: cover;
+  border-radius: 10px;
+  width: 100%;
+  height: 400px;
+  margin-top: 1em;
+}
+.uri-post-title {
+  font-family: "Josefin Sans", sans-serif;
+  padding: 2em;
+  text-align: center;
+}
+.uri-userpost-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1em;
+}
+.post-info-detail-cont {
+  font-family: "Josefin Sans", sans-serif;
+  padding: 3px;
+  border-top: 1px solid rgb(192, 189, 189);
+  border-bottom: 1px solid rgb(192, 189, 189);
+  display: flex;
+  align-items: center;
+}
+.post-article-content {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #444;
+  line-height: 26px;
+  padding: 0em 4em 2em 4em;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .uri-post-title {
+    padding: 1em;
+  }
+  .post-article-content {
+    padding: 0em 0.5px 2em 0.5px;
+  }
+  .uri-featuredImage {
+   width: 100%;
+   height: auto;
+  }
+  .uri-featuredImageCont {
+    padding: 0.5px;
+  }
+  .uri-post-title {
+   padding: 1px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+ 
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
+}
