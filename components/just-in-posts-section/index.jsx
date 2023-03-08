@@ -145,7 +145,6 @@ const JustInSection = ({ data }) => {
       <Grid container spacing={2} className="JustInBootom-cont">
         {justin_bottomSectionObjects &&
           justin_bottomSectionObjects.map((item, index) => {
-            console.log(item)
             return (
               <Grid
                 item

@@ -3,8 +3,7 @@ import PostCard from '../../components/PostCard';
 import { client } from '../../lib/apollo';
 import { gql } from "@apollo/client";
 
-export default function Home({ posts }) {
-  console.log(posts)
+export default function Wordpress({ posts }) {
   return (
     <div className="container">
       <Head>
@@ -40,7 +39,7 @@ export async function getStaticProps(){
   // Paste your GraphQL query inside of a gql tagged template literal
   const GET_POSTS = gql`
   query AllPostsQuery {
-    posts(first: 50) {
+    posts(first: 9) {
       nodes {
         title
         content

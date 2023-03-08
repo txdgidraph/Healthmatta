@@ -4,7 +4,6 @@ import { gql } from "@apollo/client";
 import SideBar from "../components/sidebar";
 
 export default function SlugPage({ post }) {
-  console.log(post);
   return (
     <div>
       
