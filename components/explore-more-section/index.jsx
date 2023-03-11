@@ -79,6 +79,7 @@ function ExploreMoreOptions() {
           );
         })}
       </Grid>
+      <div></div>
     </div>
   );
 }
