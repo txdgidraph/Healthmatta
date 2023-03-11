@@ -80,7 +80,7 @@ export default function TopBar() {
           <Hidden smUp>
             <Link href="/">
           <Image
-              src="/assets/cybermatta-logo.png"
+              src="/assets/healthmatta_logo.png"
               height="30"
               width="200"
               style={{ marginRight: "3em" }}
