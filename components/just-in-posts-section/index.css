@@ -183,6 +183,9 @@ body {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  .justInContainer{
+    margin: 5em 1em 0em 1em;
+  }
   .just-in-top-cont {
     padding-left: 1em;
     padding-right: 1em;
@@ -212,27 +215,37 @@ body {
     margin-top: 0.5em;
   }
 
-  .JustInBootom-cont {
-    width: 100%;
-    padding: 0em;
-  }
-  .JustInBottom-col-1-cont {
-    width: 100%;
+  .JustInBottom-col-1-cont{
+    display:flex;
+    box-shadow: none;
     height: auto;
-    border-top: 1px solid #555;
-    box-shadow: none;
-    border-radius: 0px;
   }
-  .JustInBottom-col-1-cont:hover {
+  .JustInBottom-col-1-cont:hover{
     box-shadow: none;
   }
-  .JustInBottom-col-1-img {
-    display: none;
+  .JustInBottom-col-1-img{
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
   }
+  .JustInBottom-col-1-post-details {
+    padding: 0em 0em 0em 1em;
+    font-family: "Josefin Sans", sans-serif;
+  }
+  .JustInBottom-column-1-title {
+    font-size: 17px;
+    font-weight: 700;
+    margin-top: 0em;
+    margin-bottom: 0.5em;
+  }
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) and (max-width: 767px) {
+  .justInContainer{
+    margin: 5em 1.5em 0em 1.5em;
+  }
   .just-in-top-cont {
     padding-left: 1em;
     padding-right: 1em;
@@ -277,12 +290,15 @@ body {
     box-shadow: none;
   }
   .JustInBottom-col-1-img {
-    display: none;
+    /* display: none; */
   }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .justInContainer{
+    margin: 5em 2em 0em 2em;
+  }
   .just-in-top-cont {
     padding-left: 1em;
     padding-right: 1em;
@@ -327,12 +343,15 @@ body {
     box-shadow: none;
   }
   .JustInBottom-col-1-img {
-    display: none;
+    /* display: none; */
   }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .justInContainer{
+    margin: 5em 5em 0em 5em;
+  }
   .just-in-top-cont {
     padding-left: 1em;
     padding-right: 1em;
@@ -383,4 +402,7 @@ body {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+  .justInContainer{
+    margin: 5em 5em 0em 5em;
+  }
 }

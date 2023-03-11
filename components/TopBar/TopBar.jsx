@@ -16,13 +16,13 @@ import ListItem from "@material-ui/core/ListItem";
 import Image from "next/image";
 
 const navigationLinks = [
-  { name: "TECH NEWS", href: "/tech-news" },
-  { name: "EVENTS", href: "/events" },
-  { name: "STARTUPS", href: "/startups" },
+  { name: "HEALTH", href: "/tech-news" },
+  { name: "HYGIENE", href: "/events" },
+  { name: "FOODS & DRINKS", href: "/startups" },
   { name: "HOW TO's", href: "/how-to" },
-  { name: "GADGETS & APPLIANCES", href: "/gadgets-appliances" },
-  { name: "LEARN", href: "/learn" },
-  { name: "SHOP", href: "/shop" },
+  { name: "WORKOUTS", href: "/gadgets-appliances" },
+  { name: "NEWS", href: "/learn" },
+  { name: "BLOGS", href: "/shop" },
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -51,7 +51,7 @@ export default function TopBar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <AppBar position="" color="default" style={{ position: "fixed", top: 0, backgroundColor:"#0a192b" }}>
+    <AppBar position="" color="default" style={{ position: "fixed", top: 0, backgroundColor:"#65BFA1" }}>
       <Container maxWidth="lg">
         <Toolbar disableGutters>
           <Hidden xsDown>
