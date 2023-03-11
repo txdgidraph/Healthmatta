@@ -132,7 +132,38 @@ export async function getStaticProps() {
   // const db = clientTEST.db("users_db");
   // let users = await db.collection("users_details").find({}).toArray();
   // users = JSON.parse(JSON.stringify(users));
-
+  
+  const GET_POST = gql`
+  query GetPostByURI($id: ID!) {
+    post(id: $id, idType: URI) {
+      title
+      content
+      date
+      uri
+      author {
+        node {
+          firstName
+          lastName
+        }
+      }
+      featuredImage {
+        node {
+          mediaItemUrl
+          fileSize
+          mediaType
+          mimeType
+          sizes
+        }
+      }
+      categories {
+        nodes {
+          name
+        }
+      }
+      
+    }
+  }
+`;
   return {
     props: {
       JUST_IN_posts,
