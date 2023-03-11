@@ -18,6 +18,8 @@ const useStyles = makeStyles({
   sectionTitle: {
     textAlign: "center",
     paddingTop: "1em",
+    paddingBottom:"1em",
+    fontSize:"1.5em"
   },
   optionContainer: {
     display: "flex",
@@ -25,6 +27,10 @@ const useStyles = makeStyles({
     justifyContent: "center",
     alignItems: "center",
   },
+  optionTitle:{
+    fontSize:"1.4em",
+    paddingTop:"5px"
+  }
 });
 
 const exploreOptionsObject = [
@@ -46,13 +52,13 @@ const exploreOptionsObject = [
   },
 ];
 
-function ExploreMoreOptions({ imageUrl }) {
+function ExploreMoreOptions() {
   const classes = useStyles();
   const matches = useMediaQuery("(max-width:600px)");
 
   return (
     <div className={classes.sectionContainer}>
-      <h1 className={classes.sectionTitle}>Explore more</h1>
+      <h1 className={classes.sectionTitle}>Explore More</h1>
       <Grid container spacing={2}>
         {exploreOptionsObject.map((item) => {
           return (
@@ -67,7 +73,7 @@ function ExploreMoreOptions({ imageUrl }) {
                     height: matches ? "150px" : "200px",
                   }}
                 />
-                <h3>{item.optionTitle}</h3>
+                <h3 className={classes.optionTitle}>{item.optionTitle}</h3>
               </div>
             </Grid>
           );

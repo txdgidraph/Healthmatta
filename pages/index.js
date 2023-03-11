@@ -10,6 +10,7 @@ import gql from "graphql-tag";
 import { client } from "../lib/apollo";
 import GadgetsDevices from "../components/gadgets-devices-section";
 import ExploreMoreOptions from "../components/explore-more-section";
+
 export default function Home({
   JUST_IN_posts,
   // LEARN_SEC_posts,
@@ -35,7 +36,7 @@ export default function Home({
 
       {/* <Header /> */}
        <JustInSection data={JUST_IN_posts}/>
-       <ExploreMoreOptions imageUrl="/assets/wallpaper-one.jpeg"/>
+       <ExploreMoreOptions/>
       {/* <TrendingNews
         Trend_News_Data={TREND_NEWS_posts}
         Just_In_Data={JUST_IN_posts}
