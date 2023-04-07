@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { client } from "../lib/apollo";
 import { gql } from "@apollo/client";
 import SideBar from "../components/sidebar";
@@ -6,7 +5,6 @@ import SideBar from "../components/sidebar";
 export default function SlugPage({ post }) {
   return (
     <div>
-      
       <main>
         <div className="container-fluid uri-header">
           <div className="row">
@@ -25,7 +23,9 @@ export default function SlugPage({ post }) {
                   </span>
                   <span>
                     ✍️ &nbsp;&nbsp;
-                    {`${post.author.node.firstName} ${post.author.node.lastName}`}{" "}
+                    {`${post.author?.node?.firstName || "Healthmatta"} ${
+                      post.author?.node?.lastName || ""
+                    }`}{" "}
                     | 🗓️ &nbsp;&nbsp;{new Date(post.date).toLocaleDateString()}
                   </span>
                 </div>
@@ -67,10 +67,9 @@ export async function getStaticPaths() {
   const paths = uris.map((uri) => ({ params: { uri } }));
   return {
     paths,
-    fallback: 'blocking', // Use 'blocking' if you want to generate the page on the first request.
+    fallback: "blocking", // Use 'blocking' if you want to generate the page on the first request.
   };
 }
-
 
 export async function getStaticProps({ params }) {
   const GET_POST = gql`
@@ -100,7 +99,6 @@ export async function getStaticProps({ params }) {
             name
           }
         }
-        
       }
     }
   `;
@@ -117,7 +115,6 @@ export async function getStaticProps({ params }) {
     },
   };
 }
-
 
 // export async function getServerSideProps({ params }) {
 //   const GET_POST = gql`
@@ -147,7 +144,7 @@ export async function getStaticProps({ params }) {
 //             name
 //           }
 //         }
-        
+
 //       }
 //     }
 //   `;
