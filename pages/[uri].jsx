@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { client } from "../lib/apollo";
 import { gql } from "@apollo/client";
 import SideBar from "../components/sidebar";
@@ -6,7 +5,6 @@ import SideBar from "../components/sidebar";
 export default function SlugPage({ post }) {
   return (
     <div>
-      
       <main>
         <div className="container-fluid uri-header">
           <div className="row">
@@ -25,7 +23,9 @@ export default function SlugPage({ post }) {
                   </span>
                   <span>
                     ✍️ &nbsp;&nbsp;
-                    {`${post.author.node.firstName} ${post.author.node.lastName}`}{" "}
+                    {`${post.author?.node?.firstName || "Healthmatta"} ${
+                      post.author?.node?.lastName || ""
+                    }`}{" "}
                     | 🗓️ &nbsp;&nbsp;{new Date(post.date).toLocaleDateString()}
                   </span>
                 </div>
@@ -50,76 +50,28 @@ export default function SlugPage({ post }) {
     </div>
   );
 }
-export async function getStaticPaths() {
-  const GET_POST_URIS = gql`
-    query GetPostUris {
-      posts {
-        nodes {
-          uri
-        }
-      }
-    }
-  `;
-  const response = await client.query({
-    query: GET_POST_URIS,
-  });
-  const uris = response?.data?.posts?.nodes?.map((post) => post.uri) || [];
-  const paths = uris.map((uri) => ({ params: { uri } }));
-  return {
-    paths,
-    fallback: 'blocking', // Use 'blocking' if you want to generate the page on the first request.
-  };
-}
+// export async function getStaticPaths() {
+//   const GET_POST_URIS = gql`
+//     query GetPostUris {
+//       posts {
+//         nodes {
+//           uri
+//         }
+//       }
+//     }
+//   `;
+//   const response = await client.query({
+//     query: GET_POST_URIS,
+//   });
+//   const uris = response?.data?.posts?.nodes?.map((post) => post.uri) || [];
+//   const paths = uris.map((uri) => ({ params: { uri } }));
+//   return {
+//     paths,
+//     fallback: "blocking", // Use 'blocking' if you want to generate the page on the first request.
+//   };
+// }
 
-
-export async function getStaticProps({ params }) {
-  const GET_POST = gql`
-    query GetPostByURI($id: ID!) {
-      post(id: $id, idType: URI) {
-        title
-        content
-        date
-        uri
-        author {
-          node {
-            firstName
-            lastName
-          }
-        }
-        featuredImage {
-          node {
-            mediaItemUrl
-            fileSize
-            mediaType
-            mimeType
-            sizes
-          }
-        }
-        categories {
-          nodes {
-            name
-          }
-        }
-        
-      }
-    }
-  `;
-  const response = await client.query({
-    query: GET_POST,
-    variables: {
-      id: params.uri,
-    },
-  });
-  const post = response?.data?.post;
-  return {
-    props: {
-      post,
-    },
-  };
-}
-
-
-// export async function getServerSideProps({ params }) {
+// export async function getStaticProps({ params }) {
 //   const GET_POST = gql`
 //     query GetPostByURI($id: ID!) {
 //       post(id: $id, idType: URI) {
@@ -147,7 +99,6 @@ export async function getStaticProps({ params }) {
 //             name
 //           }
 //         }
-        
 //       }
 //     }
 //   `;
@@ -164,3 +115,49 @@ export async function getStaticProps({ params }) {
 //     },
 //   };
 // }
+
+export async function getServerSideProps({ params }) {
+  const GET_POST = gql`
+    query GetPostByURI($id: ID!) {
+      post(id: $id, idType: URI) {
+        title
+        content
+        date
+        uri
+        author {
+          node {
+            firstName
+            lastName
+          }
+        }
+        featuredImage {
+          node {
+            mediaItemUrl
+            fileSize
+            mediaType
+            mimeType
+            sizes
+          }
+        }
+        categories {
+          nodes {
+            name
+          }
+        }
+
+      }
+    }
+  `;
+  const response = await client.query({
+    query: GET_POST,
+    variables: {
+      id: params.uri,
+    },
+  });
+  const post = response?.data?.post;
+  return {
+    props: {
+      post,
+    },
+  };
+}
