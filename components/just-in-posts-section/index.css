@@ -396,7 +396,7 @@ body {
     box-shadow: none;
   }
   .JustInBottom-col-1-img {
-    display: none;
+    /* display: none; */
   }
 }
 
