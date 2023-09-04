@@ -41,7 +41,7 @@ const FooterComponent = () => {
           <Typography variant="h6" className={mounted && classes.heading}>
             About
           </Typography>
-          <Typography variant="body1">Cybermatta</Typography>
+          <Typography variant="body1">Healthmatta</Typography>
           <Typography variant="body1">Staff</Typography>
           <Typography variant="body1">Contact Us</Typography>
           <Typography variant="body1">Advertise</Typography>
